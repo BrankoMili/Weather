@@ -114,16 +114,6 @@ window.addEventListener('keypress', function (e) {
     }
 });
 
-// Randomly choose icon
-// let choices = ['uil uil-mountains-sun', 'uil uil-desert', 'uil uil-wind'];
-// function choose(choices) {
-//   let index = Math.floor(Math.random() * choices.length);
-//   return choices[index];
-// }
-// document.getElementById('icon').className = choose(choices);
-
-
-
 // Get location functions
 // Get weather info by find current location
 function getCoordintes() {
