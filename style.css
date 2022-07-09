@@ -1,0 +1,147 @@
+* {
+  color: #36626a;
+	margin: 0px;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+
+.button-28 {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #36626a;
+  border-radius: 12px;
+  box-sizing: border-box;
+  color: #36626a;
+  cursor: pointer;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  min-height: 30px;
+  min-width: 0;
+  outline: none;
+  padding: 7px 35px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 3%;
+  will-change: transform;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.button-28:disabled {
+  pointer-events: none;
+}
+
+.button-28:hover {
+  color: #fff;
+  background-color: #36626a;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+input[type=text] {
+  border: dotted;
+  border-width: 2px;
+  display: flex;
+  margin: 1.5rem auto;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+input[type=text]::placeholder {
+  color: #36626a;
+}
+
+p {
+  text-align: center;
+}
+
+.temperature {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.wrong {
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: brown;
+}
+
+.minmax {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.minmaxtemp {
+  font-weight: bold;
+}
+
+/* i {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  color: #f18973;
+} */
+
+.powered {
+  margin-top: 3rem;
+  font-size: 0.6rem;
+}
+
+.imgcurrent {
+  display: flex;
+  margin: 0 auto;
+  width: 15rem;
+}
+
+.imgtom {
+  display: flex;
+  margin: 0 auto;
+  width: 4rem;
+}
+
+.imgdat {
+  display: flex;
+  margin: 0 auto;
+  width: 4rem;
+}
+
+.minmaxtom {
+  text-align: center;
+  font-weight: bold;
+}
+
+.minmaxdat {
+  text-align: center;
+  font-weight: bold;
+}
+
+.forecast {
+  display: block;
+  margin: 0 auto;
+}

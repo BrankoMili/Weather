@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather info</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+    <h1>Weather info</h1>
+
+    <!-- currently temperature -->
+    <p>Current weather: <span id="locationcitycountry"></span></p>
+    
+    <!-- icon -->
+    <!-- <i class='uil uil-desert' id="icon"></i> -->
+    <img class='imgcurrent' src='./river-6968614.svg' id='icons'/>
+    <!-- value of temperature -->
+    <p class="temperature" id="temperature"></p>
+    <p id="description"></p>
+
+    <!-- min max temperatures -->
+    <div class="minmax">
+    <p>Today minimum temperature: <span class="minmaxtemp" id="mintemp"></span></p>
+    <p>Today maximum temperature: <span class="minmaxtemp" id="maxtemp"></span></p>
+    </div>
+
+    <!-- min max temperatures tomorrow forecast -->
+    <div class="forecast" id="forecast">
+    <img class="imgtom" id='icontomorrow'/>
+    <div class="minmaxtom">
+    <span id="mintemptomorrow"></span><span id="maxtemptomorrow"></span>
+    </div>
+    <p id="datetomorrow"></p>
+
+    <!-- min max temperatures day after tomorrow forecast -->
+
+    <img class="imgdat" id='icondat'/>
+    <div class="minmaxdat">
+    <span id="mintempdat"></span><span id="maxtempdat"></span>
+    </div>
+    <p id="datedayaftertomorrow"></p>
+    </div>
+
+
+    <input type="text" placeholder="City/country">
+    <p class="wrong" id="wrong"></p>
+    <button id='submit' class="button-28" role="button">Submit</button>
+    <button id='location' class="button-28" role="button">Current location</button>
+
+    <p class="powered">Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></p>
+
+</body>
+
+
+<script src="weather.js"></script>
+
+
+</html>
