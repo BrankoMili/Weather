@@ -14,7 +14,7 @@ let submitInfo = (cityparameter, errorarg) => {
     let countryname = data.location.country;
     let citycountry = cityname + ', ' + countryname;
     document.getElementById('locationcitycountry').innerHTML = citycountry;
-    console.log(data);
+    // console.log(data);
     // current temperature
     temperature = data.current.temp_c + '°C';
     document.getElementById('temperature').innerHTML = temperature;
