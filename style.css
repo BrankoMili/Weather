@@ -27,13 +27,13 @@ h1 {
   color: #36626a;
   cursor: pointer;
   font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: normal;
   min-height: 30px;
   min-width: 0;
   outline: none;
-  padding: 7px 35px;
+  padding: 3px 35px;
   text-align: center;
   text-decoration: none;
   transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
@@ -116,13 +116,15 @@ p {
 .imgtom {
   display: flex;
   margin: 0 auto;
-  width: 3.8rem;
+  width: 4rem;
+  margin-bottom: -0.4rem;
 }
 
 .imgdat {
   display: flex;
   margin: 0 auto;
-  width: 3.8rem;
+  width: 4rem;
+  margin-bottom: -0.4rem;
 }
 
 .minmaxtom {
@@ -154,4 +156,8 @@ p {
 .countryclass {
   display: none;
   margin-top: -0.5rem;
+}
+
+.currentweather {
+  margin-bottom: -0.2rem;
 }
