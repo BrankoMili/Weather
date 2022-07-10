@@ -15,7 +15,7 @@ let submitInfo = (cityparameter, errorarg) => {
     let countryname = data.location.country;
     let citycountry = cityname + ', ' + countryname;
     document.getElementById('locationcitycountry').innerHTML = citycountry;
-    console.log(data);
+    // console.log(data);
     // current temperature (fahrenheit and celsius options)
     if (document.getElementById('scale').value === 'Celsius') {
     temperature = data.current.temp_c + '°C';
