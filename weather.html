@@ -13,7 +13,7 @@
     <h1>Weather Forecast</h1>
 
     <!-- currently temperature -->
-    <p>Current weather: <span id="locationcitycountry"></span></p>
+    <p class="currentweather">Current weather: <span id="locationcitycountry"></span></p>
     
     <!-- icon -->
     <!-- <i class='uil uil-desert' id="icon"></i> -->
@@ -46,12 +46,30 @@
     </div>
 
 
-    <input type="text" placeholder="City/country">
+    <input type="text" placeholder="City/country"/>
+    
+    <div class=countryclass id="countryname">
+    <input type="text" placeholder="Country name" id="namecountry"/>
+    </div>
+
+    <div class="scale" id="tempscale">
+      <label for="scale">Temperature scale:</label>
+  <select name="scale" id="scale">
+    <option value="Celsius">Celsius</option>
+    <option value="Fahrenheit">Fahrenheit</option>
+  </select>
+  </div>
+
+    <div class="advanced">
+    <label><input type="checkbox" id="advanced"> Advanced search</input></label>
+    </div>
+
     <p class="wrong" id="wrong"></p>
     <button id='submit' class="button-28" role="button">Submit</button>
     <button id='location' class="button-28" role="button">Current location</button>
 
     <p class="powered">Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></p>
+
 
 </body>
 
