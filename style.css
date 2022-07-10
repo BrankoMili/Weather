@@ -103,7 +103,7 @@ p {
 }
 
 .powered {
-  margin-top: 3rem;
+  margin-top: 1.7rem;
   font-size: 0.6rem;
 }
 
@@ -116,13 +116,13 @@ p {
 .imgtom {
   display: flex;
   margin: 0 auto;
-  width: 4rem;
+  width: 3.8rem;
 }
 
 .imgdat {
   display: flex;
   margin: 0 auto;
-  width: 4rem;
+  width: 3.8rem;
 }
 
 .minmaxtom {
@@ -153,4 +153,5 @@ p {
 
 .countryclass {
   display: none;
+  margin-top: -0.5rem;
 }

@@ -59,7 +59,7 @@ let submitInfo = (cityparameter, errorarg) => {
         let partof = iconnumber.substring(iconnumber.length - 7)
         let code = './weather/64x64/day/' + partof;
         document.getElementById('icons').src = code;
-        document.getElementById('icons').style.width = '8rem'
+        document.getElementById('icons').style.width = '7.2rem'
     }
     // If currently is night
     else {
