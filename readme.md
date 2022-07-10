@@ -1,2 +1,2 @@
-Weather info website using https://www.weatherapi.com/ API for getting information about current weather and forecasted weather.
-Using HTML Geolocation API to get user's coordinates and applying it on the weatherapi API.
+In the Weather forecast project, Weatherapi API is used to get information about current weather and forecasted weather. 
+HTML Geolocation API is used to get a user's coordinates and apply them in the Weatherapi API.
