@@ -69,9 +69,6 @@ let submitInfo = (cityparameter, errorarg) => {
         document.getElementById("icons").src = code;
       }
 
-      //displaying of forecast
-      document.getElementById("forecast").style.display = "block";
-
       // minimum and maximum temperature tommorrow (fahrenheit and celsius options)
       if (document.getElementById("scale").value === "Celsius") {
         let mintemptomorrow =
