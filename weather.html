@@ -6,42 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Forecast</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
 
-<body>
+  <body>
     <h1>Weather Forecast</h1>
 
     <!-- currently temperature -->
     <div class="currentweather">
-    <p>Current weather: <span id="locationcitycountry"></span></p>
+      <p>Current weather: <span id="locationcitycountry"></span></p>
     </div>
 
     <!-- current image -->
-    <img class='imgcurrent' src='./river-6968614.svg' id='icons'/>
+    <img class="imgcurrent" src="./river-6968614.svg" id="icons" />
     <!-- value of temperature -->
     <p class="temperature" id="temperature"></p>
     <p id="description"></p>
 
     <!-- min max temperatures -->
     <div class="minmax">
-    <p>Today minimum temperature: <span class="minmaxtemp" id="mintemp"></span></p>
-    <p>Today maximum temperature: <span class="minmaxtemp" id="maxtemp"></span></p>
+      <p>
+        Today minimum temperature: <span class="minmaxtemp" id="mintemp"></span>
+      </p>
+      <p>
+        Today maximum temperature: <span class="minmaxtemp" id="maxtemp"></span>
+      </p>
     </div>
 
     <!-- min max temperatures tomorrow forecast -->
     <div class="forecast" id="forecast">
       <div>
-        <img class="imgtom" id='icontomorrow'/>
+        <img class="imgtom" id="icontomorrow" />
         <div class="minmaxtom">
-            <span id="mintemptomorrow"></span><span id="maxtemptomorrow"></span>
+          <span id="mintemptomorrow"></span><span id="maxtemptomorrow"></span>
         </div>
         <p id="datetomorrow"></p>
       </div>
 
       <!-- min max temperatures day after tomorrow forecast -->
       <div>
-        <img class="imgdat" id='icondat'/>
+        <img class="imgdat" id="icondat" />
         <div class="minmaxdat">
           <span id="mintempdat"></span><span id="maxtempdat"></span>
         </div>
@@ -49,34 +56,37 @@
       </div>
     </div>
 
+    <input type="text" placeholder="City/country" />
 
-    <input type="text" placeholder="City/country"/>
-    
-    <div class=countryclass id="countryname">
-    <input type="text" placeholder="Country name" id="namecountry"/>
+    <div class="countryclass" id="countryname">
+      <input type="text" placeholder="Country name" id="namecountry" />
     </div>
 
     <div class="scale" id="tempscale">
       <label for="scale">Temperature scale:</label>
-  <select name="scale" id="scale">
-    <option value="Celsius">Celsius</option>
-    <option value="Fahrenheit">Fahrenheit</option>
-  </select>
-  </div>
+      <select name="scale" id="scale">
+        <option value="Celsius">Celsius</option>
+        <option value="Fahrenheit">Fahrenheit</option>
+      </select>
+    </div>
 
     <div class="advanced">
-    <label><input type="checkbox" id="advanced"> Advanced search</input></label>
+      <label><input type="checkbox" id="advanced" /> Advanced search</label>
     </div>
 
     <p class="wrong" id="wrong"></p>
-    <button id='submit' class="button-28" role="button">Submit</button>
-      <button id='location' class="button-28" role="button">Current location</button>
+    <button id="submit" class="button-28" role="button">Submit</button>
+    <button id="location" class="button-28" role="button">
+      Current location
+    </button>
 
-    <p class="powered">Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></p>
+    <p class="powered">
+      Powered by
+      <a href="https://www.weatherapi.com/" title="Free Weather API"
+        >WeatherAPI.com</a
+      >
+    </p>
+  </body>
 
-</body>
-
-
-<script src="weather.js"></script>
-
+  <script src="weather.js"></script>
 </html>

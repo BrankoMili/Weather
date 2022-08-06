@@ -117,14 +117,13 @@ p {
 
 .imgtom {
   display: flex;
-  margin: 0 auto;
-  width: 4rem;
+  margin: 0.5rem auto 0;
   margin-bottom: -0.4rem;
 }
 
 .imgdat {
   display: flex;
-  margin: 0 auto;
+  margin: 0.5rem auto 0;
   width: 4rem;
   margin-bottom: -0.4rem;
 }
