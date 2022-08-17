@@ -15,13 +15,12 @@ let submitInfo = (cityparameter, errorarg) => {
   )
     .then((response) => response.json())
     .then((data) => {
+      document.getElementById("forecast").style.display = "flex";
       let cityname = data.location.name;
       let countryname = data.location.country;
       let citycountry = cityname + ", " + countryname;
       document.getElementById("locationcitycountry").innerHTML = citycountry;
-      // console.log(data);
       // current temperature (fahrenheit and celsius options)
-      document.getElementById("forecast").style.display = "flex";
       if (document.getElementById("scale").value === "Celsius") {
         temperature = data.current.temp_c + "°C";
         document.getElementById("temperature").innerHTML = temperature;
