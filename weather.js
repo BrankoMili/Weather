@@ -21,6 +21,7 @@ let submitInfo = (cityparameter, errorarg) => {
       document.getElementById("locationcitycountry").innerHTML = citycountry;
       // console.log(data);
       // current temperature (fahrenheit and celsius options)
+      document.getElementById("forecast").style.display = "flex";
       if (document.getElementById("scale").value === "Celsius") {
         temperature = data.current.temp_c + "°C";
         document.getElementById("temperature").innerHTML = temperature;
