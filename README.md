@@ -1,4 +1,6 @@
-# Weather_Forecast
+# Weather Forecast
+
+Website url: https://weather-forecast-project-application.netlify.app/
 
 This weather forecast project is a website that allows users to view the current and future weather conditions for a given city or country. 
 
