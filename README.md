@@ -1,3 +1,3 @@
 # Weather_Forecast
-In the Weather forecast project, Weatherapi API is used to get information about current weather and forecasted weather. 
-HTML Geolocation API is used to get a user's coordinates and apply them in the Weatherapi API.
+This weather forecast project is a website that allows users to view the current and future weather conditions for a given city or country. The application uses the Weather API to fetch the weather data and then displays it in a user-friendly format.
+Technologies: HTML, CSS, JavaScript
