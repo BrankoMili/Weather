@@ -12,7 +12,7 @@ let submitInfo = (cityparameter, errorarg) => {
     "http://api.weatherapi.com/v1/forecast.json?key=ee7e71946cf34d04bc1191945220307&q=" +
       cityparameter +
       "&days=3&aqi=no&alerts=no"
-  ), {referrerPolicy: "unsafe_url" }
+  )
     .then((response) => response.json())
     .then((data) => {
       document.getElementById("forecast").style.display = "flex";
