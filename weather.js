@@ -1,13 +1,22 @@
 const submitButton = document.getElementById("submit");
-let cityName = document.getElementsByTagName("input")[0];
+const cityName = document.getElementsByTagName("input")[0];
+const getcurrentLocation = document.getElementById("location");
+const countryName = document.getElementById("namecountry");
 let temperature;
 let mintemp;
 let maxtemp;
-const getcurrentLocation = document.getElementById("location");
-let countryName = document.getElementById("namecountry");
+let mintemptomorrow;
+let maxtemptomorrow;
+let mintempdat;
+let maxtempdat;
+
+// Check if name contain numbers or special characters
+function containsNumberSpecialCharacter(str) {
+  return /[0-9`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(str);
+}
 
 // Get weather info by input city/country name
-let submitInfo = (cityparameter, errorarg) => {
+const submitInfo = (cityparameter, errorarg) => {
   fetch(
     "http://api.weatherapi.com/v1/forecast.json?key=ee7e71946cf34d04bc1191945220307&q=" +
       cityparameter +
@@ -16,106 +25,97 @@ let submitInfo = (cityparameter, errorarg) => {
     .then((response) => response.json())
     .then((data) => {
       document.getElementById("forecast").style.display = "flex";
-      let cityname = data.location.name;
-      let countryname = data.location.country;
-      let citycountry = cityname + ", " + countryname;
+      const cityname = data.location.name;
+      const countryname = data.location.country;
+      const citycountry = cityname + ", " + countryname;
       document.getElementById("locationcitycountry").innerHTML = citycountry;
       // current temperature (fahrenheit and celsius options)
       if (document.getElementById("scale").value === "Celsius") {
         temperature = data.current.temp_c + "°C";
-        document.getElementById("temperature").innerHTML = temperature;
-        document.getElementById("wrong").innerHTML = "";
       } else {
         temperature = data.current.temp_f + "°F";
-        document.getElementById("temperature").innerHTML = temperature;
-        document.getElementById("wrong").innerHTML = "";
       }
+      document.getElementById("temperature").innerHTML = temperature;
+      document.getElementById("wrong").innerHTML = "";
 
       // minimum temperature (fahrenheit and celsius options)
       if (document.getElementById("scale").value === "Celsius") {
         mintemp = data.forecast.forecastday[0].day.mintemp_c + "°C";
-        document.getElementById("mintemp").innerHTML = mintemp;
       } else {
         mintemp = data.forecast.forecastday[0].day.mintemp_f + "°F";
-        document.getElementById("mintemp").innerHTML = mintemp;
       }
+      document.getElementById("mintemp").innerHTML = mintemp;
 
       // maximum temperature (fahrenheit and celsius options)
       if (document.getElementById("scale").value === "Celsius") {
         maxtemp = data.forecast.forecastday[0].day.maxtemp_c + "°C";
-        document.getElementById("maxtemp").innerHTML = maxtemp;
       } else {
         maxtemp = data.forecast.forecastday[0].day.maxtemp_f + "°F";
-        document.getElementById("maxtemp").innerHTML = maxtemp;
       }
+      document.getElementById("maxtemp").innerHTML = maxtemp;
 
       // weather description
-      let description = data.current.condition.text;
+      const description = data.current.condition.text;
       document.getElementById("description").innerHTML = description;
 
       //weather icons
-      let iconnumber = data.current.condition.icon;
+      const iconnumber = data.current.condition.icon;
       // If currently is day
       if ((data.current.condition.is_day = 1)) {
-        let partof = iconnumber.substring(iconnumber.length - 7);
-        let code = "./weather/64x64/day/" + partof;
+        const partof = iconnumber.substring(iconnumber.length - 7);
+        const code = "./weather/64x64/day/" + partof;
         document.getElementById("icons").src = code;
         document.getElementById("icons").style.width = "7.2rem";
       }
       // If currently is night
       else {
-        let partof = iconnumber.substring(iconnumber.length - 7);
-        let code = "./weather/64x64/night/" + partof;
+        const partof = iconnumber.substring(iconnumber.length - 7);
+        const code = "./weather/64x64/night/" + partof;
         document.getElementById("icons").src = code;
       }
 
       // minimum and maximum temperature tommorrow (fahrenheit and celsius options)
       if (document.getElementById("scale").value === "Celsius") {
-        let mintemptomorrow =
-          data.forecast.forecastday[1].day.mintemp_c + "°C / ";
-        document.getElementById("mintemptomorrow").innerHTML = mintemptomorrow;
-        let maxtemptomorrow = data.forecast.forecastday[1].day.maxtemp_c + "°C";
-        document.getElementById("maxtemptomorrow").innerHTML = maxtemptomorrow;
+        mintemptomorrow = data.forecast.forecastday[1].day.mintemp_c + "°C / ";
+        maxtemptomorrow = data.forecast.forecastday[1].day.maxtemp_c + "°C";
       } else {
-        let mintemptomorrow =
-          data.forecast.forecastday[1].day.mintemp_f + "°F / ";
-        document.getElementById("mintemptomorrow").innerHTML = mintemptomorrow;
-        let maxtemptomorrow = data.forecast.forecastday[1].day.maxtemp_f + "°F";
-        document.getElementById("maxtemptomorrow").innerHTML = maxtemptomorrow;
+        mintemptomorrow = data.forecast.forecastday[1].day.mintemp_f + "°F / ";
+        maxtemptomorrow = data.forecast.forecastday[1].day.maxtemp_f + "°F";
       }
+      document.getElementById("mintemptomorrow").innerHTML = mintemptomorrow;
+      document.getElementById("maxtemptomorrow").innerHTML = maxtemptomorrow;
 
       //weather icons tomorrow
-      let iconnumbertomorrow = data.forecast.forecastday[1].day.condition.icon;
-      let partoftom = iconnumbertomorrow.substring(
+      const iconnumbertomorrow =
+        data.forecast.forecastday[1].day.condition.icon;
+      const partoftom = iconnumbertomorrow.substring(
         iconnumbertomorrow.length - 7
       );
-      let codetom = "./weather/64x64/day/" + partoftom;
+      const codetom = "./weather/64x64/day/" + partoftom;
       document.getElementById("icontomorrow").src = codetom;
 
       // minimum and maximum temperature for day after tomorrow (fahrenheit and celsius options)
       if (document.getElementById("scale").value === "Celsius") {
-        let mintempdat = data.forecast.forecastday[2].day.mintemp_c + "°C / ";
-        document.getElementById("mintempdat").innerHTML = mintempdat;
-        let maxtempdat = data.forecast.forecastday[2].day.maxtemp_c + "°C";
-        document.getElementById("maxtempdat").innerHTML = maxtempdat;
+        mintempdat = data.forecast.forecastday[2].day.mintemp_c + "°C / ";
+        maxtempdat = data.forecast.forecastday[2].day.maxtemp_c + "°C";
       } else {
-        let mintempdat = data.forecast.forecastday[2].day.mintemp_f + "°F / ";
-        document.getElementById("mintempdat").innerHTML = mintempdat;
-        let maxtempdat = data.forecast.forecastday[2].day.maxtemp_f + "°F";
-        document.getElementById("maxtempdat").innerHTML = maxtempdat;
+        mintempdat = data.forecast.forecastday[2].day.mintemp_f + "°F / ";
+        maxtempdat = data.forecast.forecastday[2].day.maxtemp_f + "°F";
       }
+      document.getElementById("mintempdat").innerHTML = mintempdat;
+      document.getElementById("maxtempdat").innerHTML = maxtempdat;
 
       // Date of weather tomorrow and for day afer tomorrow
-      let dateTomorrow = data.forecast.forecastday[1].date;
-      let dateDayaftertomorrow = data.forecast.forecastday[2].date;
+      const dateTomorrow = data.forecast.forecastday[1].date;
+      const dateDayaftertomorrow = data.forecast.forecastday[2].date;
       document.getElementById("datetomorrow").innerHTML = dateTomorrow;
       document.getElementById("datedayaftertomorrow").innerHTML =
         dateDayaftertomorrow;
 
       //weather icons for day after tomorrow
-      let iconnumberdat = data.forecast.forecastday[2].day.condition.icon;
-      let partofdat = iconnumberdat.substring(iconnumberdat.length - 7);
-      let codedat = "./weather/64x64/day/" + partofdat;
+      const iconnumberdat = data.forecast.forecastday[2].day.condition.icon;
+      const partofdat = iconnumberdat.substring(iconnumberdat.length - 7);
+      const codedat = "./weather/64x64/day/" + partofdat;
       document.getElementById("icondat").src = codedat;
     })
 
@@ -136,42 +136,45 @@ let submitInfo = (cityparameter, errorarg) => {
 };
 
 // Submit on click/enter button
-submitButton.addEventListener("click", () => {
+const submitFunction = () => {
   if (document.getElementById("advanced").checked === false) {
-    let cityNamevalue = cityName.value;
-    submitInfo(cityNamevalue);
+    submitInfo(cityName.value);
   } else {
-    let citycountryName = cityName.value + "," + countryName.value;
-    submitInfo(citycountryName);
+    if (
+      !isNaN(countryName.value) ||
+      containsNumberSpecialCharacter(countryName.value)
+    ) {
+      document.getElementById("wrong").innerHTML =
+        "Country name can't contain numbers or special characters";
+    } else {
+      const citycountryName = cityName.value + "," + countryName.value;
+      submitInfo(citycountryName);
+    }
   }
-});
+};
+
+submitButton.addEventListener("click", () => submitFunction());
 
 window.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
-    if (document.getElementById("advanced").checked === false) {
-      let cityNamevalue = cityName.value;
-      submitInfo(cityNamevalue);
-    } else {
-      let citycountryName = cityName.value + "," + countryName.value;
-      submitInfo(citycountryName);
-    }
+    submitFunction();
   }
 });
 
 // Get location functions
 // Get weather info by find current location
 function getCoordintes() {
-  var options = {
+  const options = {
     enableHighAccuracy: true,
     timeout: 5000,
     maximumAge: 0,
   };
 
   function success(pos) {
-    var crd = pos.coords;
-    var lat = crd.latitude.toString();
-    var lng = crd.longitude.toString();
-    let latlngstring = lat + "," + lng;
+    const crd = pos.coords;
+    const lat = crd.latitude.toString();
+    const lng = crd.longitude.toString();
+    const latlngstring = lat + "," + lng;
     // console.log(`Latitude: ${lat}, Longitude: ${lng}`);
     getCityname = latlngstring;
     submitInfo(getCityname, true);
